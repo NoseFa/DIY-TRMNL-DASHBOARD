@@ -1,6 +1,6 @@
-# DIY-TRMNL-DASHBOARD
+# Nordic TRMNL
 
-A diy dashboard that can be used with the TRMNL software. Can display stuff like the your calendar. This repo is only for the hardware side.
+A diy dashboard that is built with the TRMNL software in mind. Can display stuff like the your calendar, reminders or the public transit schedule. This repo is only for the hardware side.
 
 ## Parts
 
@@ -14,4 +14,5 @@ A diy dashboard that can be used with the TRMNL software. Can display stuff like
 
 ## Excalidraw / Notes
 
+I used excalidraw during my design process. The mind map screenshot attached has most of my design notes.
 ![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw")
