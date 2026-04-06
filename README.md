@@ -1,6 +1,6 @@
 # Nordic TRMNL
 
-A diy dashboard that is built with the TRMNL software in mind. Can display stuff like the your calendar, reminders or the public transit schedule. This repo is only for the hardware side. The TRMNL docs were a huge help in the design process and most of the electronics are based on their suggestions.
+A diy dashboard that is built with the TRMNL software in mind. Can display stuff like the your calendar, reminders or the public transit schedule. This repo is only for the hardware side. The TRMNL docs were a huge help in the design process and most of the electronics are based on their suggestions. This project was designed as a part of the HackClub hardware hackathon FALLOUT where people make hardware projects and get a chance to go to Shenzhen, China. More info available here [Fallout](https://fallout.hackclub.com)!
 
 ## Parts
 
@@ -31,3 +31,4 @@ I used excalidraw during my design process. The mind map screenshot attached has
 ![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw")
 
 Bill of Materials available here: [BOM](./BOM.csv)
+
