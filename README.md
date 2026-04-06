@@ -10,4 +10,8 @@ A diy dashboard that can be used with the TRMNL software. Can display stuff like
 
 ## Zine Page
 
-![alt text](./Media/TrmnlZinePageScreenshot.png "Zine Page")
+![Zine Page](./Media/TrmnlZinePageScreenshot.png "Zine Page")
+
+## Excalidraw / Notes
+
+![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw")
