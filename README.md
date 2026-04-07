@@ -46,8 +46,8 @@ Bill of Materials available here: [BOM](./BOM.csv)
 
 Here are some more pictures of the project.
 
-![Case](./Media/CaseScreenshot.png "Case with PCB")
+![Case with PCB](./Media/CaseWithScreen.png "Case with PCB")
 Case from behind with screen and PCB.
 
-![Case](./Media/OnlyCase.png"Case with PCB")
+![Case](./Media/OnlyCase.png "Case without PCB")
 Case from the front without screen and PCB.
