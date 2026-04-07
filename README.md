@@ -15,7 +15,9 @@ I will be using the opensource TRMNL software and will be self-hosting the serve
 
 ## Build guide
 
-If you are using the same components you can print the case available here [3D files](./3Dfiles/). Attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the case first and the cable routed through the hole made for it. The driver board has points on the case that can attach to the case. Finally flash the software and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
+If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case only folder](./3Dfiles/CaseOnly) has ready to print files that only have the case. Use these if you are just printing the case. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB and the display. You might want to use this if you want to edit the files.
+
+Attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the case first and the cable routed through the hole made for it. The driver board has points on the case that can attach to the case. Finally flash the software and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
 
 If self-hosting follow the up to date guide available in the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod-s). This is the guide I used for my setup.
 
