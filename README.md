@@ -11,7 +11,7 @@ A diy dashboard that is built with the TRMNL software in mind. Can display stuff
 
 ## Software
 
-I will be using the opensource TRMNL software and will be self-hosting the server. If you are replicating my design but can't self-host there is a one time purchase of 43,95€ to use TRMNL servers. TRMNL software Github [Repo](https://github.com/usetrmnl/trmnl-firmware) and TRMNL website [Trmnl.com](https://trmnl.com/).
+I will be using the opensource TRMNL software and will be self-hosting the server. If you are replicating my design but can't self-host there is a one time purchase of 43,95€ to use TRMNL servers. TRMNL software Github [Repo](https://github.com/usetrmnl/trmnl-firmware) and TRMNL website [Trmnl.com](https://trmnl.com/). TRMNl has a large [plugin environment](https://trmnl.com/integrations) and a user made [Recipes](https://trmnl.com/recipes). These plugins are the life blood of the device in my opinion and makes it possible to customize what is displayed according to what you need. For example if you are interested Formula 1 you can use the Formula 1 plugin to follow the races.
 
 ## Build guide
 
@@ -20,6 +20,14 @@ If you are using the same components you can print the case available here [3D f
 If self-hosting follow the up to date guide available in the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod-s). This is the guide I used for my setup.
 
 If you plan on using TRMNL servers. After flashing the firmware you have to buy access and then claim the device through the site. [Claim your device](https://trmnl.com/claim-a-device). Then you can follow the instructions given on the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod).
+
+## Why does this exist ?
+
+This was a personal project made to make my day to day life easier. Every morning when I wake up I first open my school schedule then check the time and finally the public transit schedule. Of course because of early mornings I usually had to check atleast twice. So I looked for solutions of displaying a calendar. I needed it to be digital because I didn't have energy to use a paper calendar. So I found the TRMNL which was a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own.
+
+### Why it's a bit better ?
+
+So the my diy Nordic TRMNL is made to be wall mountable. This makes it easier to blend in to the environment. Also buying the components directly and self hosting the server makes the whole package a little bit cheaper. I still am thankful that TRMNL decided to open source the software and make the product diyable and self hostable. So there are somethings that I think my TRMNL is better for.
 
 ## Zine Page
 
@@ -31,4 +39,3 @@ I used excalidraw during my design process. The mind map screenshot attached has
 ![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw")
 
 Bill of Materials available here: [BOM](./BOM.csv)
-
