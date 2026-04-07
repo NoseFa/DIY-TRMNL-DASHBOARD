@@ -23,6 +23,8 @@ If self-hosting follow the up to date guide available in the TRMNL dev [docs](ht
 
 If you plan on using TRMNL servers. After flashing the firmware you have to buy access and then claim the device through the site. [Claim your device](https://trmnl.com/claim-a-device). Then you can follow the instructions given on the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod).
 
+For mounting I used command strips / double sided tape. I think this is better than screws for example because the device is light enough to just be held up with double sided tape. Also making the device attach with screws reliably would be harder and in my opinion overkill.
+
 ## Why does this exist ?
 
 This was a personal project made to make my day to day life easier. Every morning when I wake up I first open my school schedule then check the time and finally the public transit schedule. Of course because of early mornings I usually had to check atleast twice. So I looked for solutions of displaying a calendar. I needed it to be digital because I didn't have energy to use a paper calendar. So I found the TRMNL which was a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own.
