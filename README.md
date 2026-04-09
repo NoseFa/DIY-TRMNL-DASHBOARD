@@ -49,8 +49,8 @@ I made a wiring diagram of the connections in KiCad. Most of the connections are
 
 ## Excalidraw / Notes
 
-I used excalidraw during my design process. The mind map screenshot attached has most of my design notes.
-![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw")
+I used excalidraw during my design process. The mind map screenshot attached has most of my design notes. The mind map is available as an [excalidraw file](./Excalidraw/DIY%20TRMNL.excalidraw) for a better viewing experience.,
+![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw").
 
 Bill of Materials available here: [BOM](./BOM.csv)
 
@@ -65,4 +65,5 @@ Case from behind with screen and PCB.
 Case from the front without screen and PCB.
 
 ![Wiring diagram](./Media/ExcalidrawWiringDiagram.png "Simple wiring diagram")
+
 Simple Excalidraw Wiring diagram. I made this before the "real one" in Kicad.
