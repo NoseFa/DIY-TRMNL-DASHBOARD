@@ -21,7 +21,9 @@ I will be using the opensource TRMNL software and will be self-hosting the serve
 
 If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case only folder](./3Dfiles/CaseOnly) has ready to print files that only have the case. Use these if you are just printing the case. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB and the display. You might want to use this if you want to edit the files.
 
-Attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the case first and the cable routed through the hole made for it. The driver board has holes for you to press in heated inserts and then you can screw in 2.5mm screws in to attach the board to the case. Finally flash the software and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
+Attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the case first and the cable routed through the hole made for it. The driver board has holes for you to press in heated inserts and then you can screw in 2.5mm screws in to attach the board to the case. Finally flash the software through a computer and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
+
+For flashing the device you can use this [tool](https://trmnl.com/flash) made by TRMNL. You can pick the "Seeed studio (XIAO 7.5" ePaper panel)" because it uses the same ESP32-C3. Just open the tool, plug in the ESP32, enter flash mode and press flash.
 
 If self-hosting follow the up to date guide available in the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod-s). This is the guide I used for my setup.
 
@@ -33,7 +35,13 @@ If you don't have an outlet / power source next to you mounting point you can us
 
 ## Why does this exist ?
 
-This was a personal project made to make my day to day life easier. Every morning when I wake up I first open my school schedule then check the time and finally the public transit schedule. Of course because of early mornings I usually had to check atleast twice. So I looked for solutions of displaying a calendar. I needed it to be digital because I didn't have energy to use a paper calendar. So I found the TRMNL which was a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own.
+This was a personal project made to make my day to day life easier. Every morning when I wake up I first look at my school schedule then check the time and finally the public transit schedule. Of course because of early mornings I usually had to check atleast twice.
+
+So I looked for solutions of displaying a calendar. I needed it to be digital because I didn't have energy to use a paper calendar. So I found the TRMNL which was close to a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own. My goal for this project was to make something actually useful for me. For this it needed to do atleast 3 things.
+
+1. Show me my calendar and schedule without having to look at my phone.
+2. Wall mountable.
+3. Not need to be charged or managed alot after creation.
 
 ## Why it's a bit better ?
 
