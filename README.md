@@ -45,13 +45,17 @@ So the my diy Nordic TRMNL is made to be wall mountable. This makes it easier to
 
 I made a wiring diagram of the connections in KiCad. Most of the connections are just plug and play and using the sockets that are on the driver board the connections are pretty simple. Still there is a wiring diagram if it's needed. Also available as a [kicad schematic](./WiringDiagram/NordicTrmnl.kicad_sch).
 
+Here is another wiring diagram with pictures that shows how they attach together IRL. This might be easier to read.
+
+![Wiring diagram](./Media/WiringDiagramWithPictures.png "Wiring diagram with pictures")
+
 ## Zine Page
 
 ![Zine Page](./Media/TrmnlZinePageScreenshot.png "Zine Page")
 
 ## Excalidraw / Notes
 
-I used excalidraw during my design process. The mind map screenshot attached has most of my design notes. The mind map is available as an [excalidraw file](./Excalidraw/DIY%20TRMNL.excalidraw) for a better viewing experience.,
+I used excalidraw during my design process. The mind map screenshot attached has most of my design notes. The mind map is available as an [excalidraw file](./Excalidraw/Notes.excalidraw) for a better viewing experience.,
 ![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw").
 
 Bill of Materials available here: [BOM](./BOM.csv)
