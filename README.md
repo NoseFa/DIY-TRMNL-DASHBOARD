@@ -37,6 +37,12 @@ This was a personal project made to make my day to day life easier. Every mornin
 
 So the my diy Nordic TRMNL is made to be wall mountable. This makes it easier to blend in to the environment. Also buying the components directly and self hosting the server makes the whole package a little bit cheaper. I still am thankful that TRMNL decided to open source the software and make the product diyable and self hostable. So there are somethings that I think my TRMNL is better for.
 
+## Wiring
+
+![Wiring diagram](./Media/WiringDiagram.png "Kicad Wiring diagram")
+
+I made a wiring diagram of the connections in KiCad. Most of the connections are just plug and play and using the sockets that are on the driver board the connections are pretty simple. Still there is a wiring diagram if it's needed. Also available as a [kicad schematic](./WiringDiagram/NordicTrmnl.kicad_sch).
+
 ## Zine Page
 
 ![Zine Page](./Media/TrmnlZinePageScreenshot.png "Zine Page")
@@ -57,3 +63,6 @@ Case from behind with screen and PCB.
 
 ![Case](./Media/OnlyCase.png "Case without PCB")
 Case from the front without screen and PCB.
+
+![Wiring diagram](./Media/ExcalidrawWiringDiagram.png "Simple wiring diagram")
+Simple Excalidraw Wiring diagram. I made this before the "real one" in Kicad.
