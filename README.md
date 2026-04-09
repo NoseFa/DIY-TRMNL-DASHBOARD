@@ -29,11 +29,13 @@ If you plan on using TRMNL servers. After flashing the firmware you have to buy 
 
 For mounting I used command strips / double sided tape. I think this is better than screws for example because the device is light enough to just be held up with double sided tape. Also making the device attach with screws reliably would be harder and in my opinion overkill.
 
+If you don't have an outlet / power source next to you mounting point you can use a battery. The Seeed e-paper driver board comes with a JST connection to connect a battery and it seems to be pretty easy. I didn't need this since I have an outlet at the perfect spot to plug into and an extra usb-c power source laying around.
+
 ## Why does this exist ?
 
 This was a personal project made to make my day to day life easier. Every morning when I wake up I first open my school schedule then check the time and finally the public transit schedule. Of course because of early mornings I usually had to check atleast twice. So I looked for solutions of displaying a calendar. I needed it to be digital because I didn't have energy to use a paper calendar. So I found the TRMNL which was a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own.
 
-### Why it's a bit better ?
+## Why it's a bit better ?
 
 So the my diy Nordic TRMNL is made to be wall mountable. This makes it easier to blend in to the environment. Also buying the components directly and self hosting the server makes the whole package a little bit cheaper. I still am thankful that TRMNL decided to open source the software and make the product diyable and self hostable. So there are somethings that I think my TRMNL is better for.
 
