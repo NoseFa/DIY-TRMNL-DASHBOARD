@@ -19,9 +19,9 @@ I will be using the opensource TRMNL software and will be self-hosting the serve
 
 ## Build guide
 
-If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case only folder](./3Dfiles/CaseOnly) has ready to print files that only have the case. Use these if you are just printing the case. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB and the display. You might want to use this if you want to edit the files.
+If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case folder](./3Dfiles/CaseOnly) has ready to print files that have the case parts. Use these if you are just printing the case. You will have to print the case and pcb holder seperately. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB and the display. You might want to use this if you want to edit the files.
 
-Attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the case first and the cable routed through the hole made for it. The driver board has holes for you to press in heated inserts and then you can screw in 2.5mm screws in to attach the board to the case. Finally flash the software through a computer and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
+Attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the case first and the cable routed through the hole made for it. The PCB holder has holes for you to press in heated inserts and then you can screw in 2.5mm screws in to attach the board to holder and then to the case. Finally flash the software through a computer and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
 
 For flashing the device you can use this [tool](https://trmnl.com/flash) made by TRMNL. You can pick the "Seeed studio (XIAO 7.5" ePaper panel)" because it uses the same ESP32-C3. Just open the tool, plug in the ESP32, enter flash mode and press flash.
 
