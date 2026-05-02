@@ -13,21 +13,17 @@ A diy dashboard that is built with the TRMNL software in mind. Can display stuff
 - M2.5x5mm screws [Aliexpress](https://www.aliexpress.com/item/1005011821173994.html?spm=a2g0o.productlist.main.1.39d529a0qjtHul&algo_pvid=bd92e47b-3820-45da-b4b0-a0d232d1f28c&algo_exp_id=bd92e47b-3820-45da-b4b0-a0d232d1f28c-0&pdp_ext_f=%7B%22order%22%3A%22198%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%211.71%210.88%21%21%2113.24%216.79%21%402103846917755805715604071e08bf%2112000056711510764%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A2599385b%3Bm03_new_user%3A-29895%3BpisId%3A5000000197850338&curPageLogUid=PxbGNUoUDbsP&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005011821173994%7C_p_origin_prod%3A)
 - M2.5 Heated set inserts [Aliexpress](https://www.aliexpress.com/item/1005006838108683.html?spm=a2g0o.productlist.main.4.1a244CqV4CqVnV&aem_p4p_detail=2026040709481118270560359904760000294152&algo_pvid=09c63ec6-a5c4-490f-b016-4a70db189a22&algo_exp_id=09c63ec6-a5c4-490f-b016-4a70db189a22-3&pdp_ext_f=%7B%22order%22%3A%228643%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.95%210.88%21%21%2130.61%216.82%21%402103834817755804919052706ea73e%2112000038467725083%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A2599385b%3Bm03_new_user%3A-29895%3BpisId%3A5000000197850338&curPageLogUid=GGTl9fJBIg9O&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006838108683%7C_p_origin_prod%3A&search_p4p_id=2026040709481118270560359904760000294152_1)
 
-## Software
-
-I will be using the opensource TRMNL software and will be self-hosting the server. If you are replicating my design but can't self-host there is a one time purchase of 43,95€ to use TRMNL servers. TRMNL software Github [Repo](https://github.com/usetrmnl/trmnl-firmware) and TRMNL website [Trmnl.com](https://trmnl.com/). TRMNl has a large [plugin environment](https://trmnl.com/integrations) and a user made [Recipes](https://trmnl.com/recipes). These plugins are the life blood of the device in my opinion and makes it possible to customize what is displayed according to what you need. For example if you are interested Formula 1 you can use the Formula 1 plugin to follow the races.
-
 ## Build guide
 
 If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case folder](./3Dfiles/CaseOnly) has ready to print files that have the case parts. Use these if you are just printing the case. You will have to print the case and pcb holder seperately. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB and the display. You might want to use this if you want to edit the files.
 
 Attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the case first and the cable routed through the hole made for it. The PCB holder has holes for you to press in heated inserts and then you can screw in 2.5mm screws in to attach the board to holder and then to the case. Finally flash the software through a computer and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
 
-For flashing the device you can use this [tool](https://trmnl.com/flash) made by TRMNL. You can pick the "Seeed studio (XIAO 7.5" ePaper panel)" because it uses the same ESP32-C3. Just open the tool, plug in the ESP32, enter flash mode and press flash.
+You should check the software section for more detailed software instructions. You can pretty much just use [this tool](https://trmnl.com/flash) to flash the firmware. You should still check the software section for detailed instructions.
 
-If self-hosting follow the up to date guide available in the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod-s). This is the guide I used for my setup.
+If self-hosting follow the guide in the software section or the offical TRMNL guide available in the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod-s).
 
-If you plan on using TRMNL servers. After flashing the firmware you have to buy access and then claim the device through the site. [Claim your device](https://trmnl.com/claim-a-device). Then you can follow the instructions given on the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod).
+If you plan on using TRMNL servers. After flashing the firmware you have to buy access and then claim the device through the site. [Claim your device](https://trmnl.com/claim-a-device).
 
 For mounting I used command strips / double sided tape. I think this is better than screws for example because the device is light enough to just be held up with double sided tape. Also making the device attach with screws reliably would be harder and in my opinion overkill.
 
@@ -42,6 +38,37 @@ So I looked for solutions of displaying a calendar. I needed it to be digital be
 1. Show me my calendar and schedule without having to look at my phone.
 2. Wall mountable.
 3. Not need to be charged or managed alot after creation.
+
+## Software
+
+For the software I will start off with explaining the installation process and then move onto some extra info about it.
+
+### Installation:
+
+Start off with plugging in the ESP-32 to you computer. You can then open the tool [available here](https://trmnl.com/flash). You can pick the "Seeed studio (XIAO 7.5" ePaper panel)" because it uses the same controller the ESP32-C3.
+
+![Flashing tool](./Media/WiringDiagramWithPictures.png "A screenshot from the flasing tool")
+
+To enter the ESP-32 into flashing mode you should plug it into your computer and hold down the BOOT button. This is the left button when looking at the board with the USB-c port pointing upwards. After this it should be visible in the USB JTAG/serial menu of your browser if you are using the web tool. After flashing the software to the ESP-32 you are down with the board and should move onto the configuring the server side. Incase you can't use the web tool for some reason you can find more detaikled instructions on [TRMNL's software GitHub page](https://github.com/usetrmnl/trmnl-firmware). This includes compaling the code yourself and having to combine .bin files and flashing them. This is mostly meant for developers and shouldn't be needed. 
+
+The next steps you need to do is setting up the server and syncing it to the display. If you plan on self-hosting (this means running a docker container with the TRMNL server on your own hardware like a RPI or a home server etc.). This option is a little bit more advanced compared to using TRMNL's servers.
+
+#### Buying access
+
+For buying access you can navigate to [the TRMNL site store](https://shop.trmnl.com/products/byod?srsltid=AfmBOoo1Ytf9WYcag06w6xm2wL5pxmzdaAHcFxV1IGvvCJTR-GRp508G). Here you can buy access / a license to use TRMNL servers for your display. The server is responsible for compiling all the data from different sources and then sending a page that the device can render to your display. This is the easier option and after flashing the firmware on your ESP-32 you should just be able to navigate to [The Claim your device page](https://trmnl.com/claim-a-device). Here you should input the data needed this includes account information and information about your BYOD license order. After claiming the device it should start working and you can start setting up what you want to see on your TRMNL
+
+
+#### Self-Hosting
+
+For self-hosting I will explain what I did in order to get it working. There are multiple OSS ways you can implement a self-hosted version of a TRMNL server. I used [Terminus](https://github.com/usetrmnl/terminus) which is the most popular way of doing this. The Terminus project is still in beta and not 100% equal to just buying TRMNL access. For me since I already have a home server I chose this route to save some money and maybe learn a thing or two. There are already existing amazing guides by on [the Terminus GitHub page](https://github.com/usetrmnl/terminus), [the TRMNL dev docs](https://docs.trmnl.com/go/diy/introduction) and [in the TRMNL Help forum by Mario](https://help.trmnl.com/en/articles/12263392-connect-your-device-to-terminus-byos). I have tried to summarise the main points here but if you get stuck check these.
+
+So for starters you should have something to host this on. I used a docker container. First I cloned the [Terminus repo](https://github.com/usetrmnl/terminus) and ran  `bin/setup docker`. The service should now be available at [https://localhost:2443](https://localhost:2443). More docker info [here on the Termninus Github page](https://github.com/usetrmnl/terminus/blob/main/doc/docker.adoc)
+
+Then on the setup screen for the TRMNL display you should connect to the wifi hotspot on your phone and use the sign in functionality to view the setup web portal. You can navigate to the advanced software section and click custom server input the local address which should be `http://192.168.0.2:2300` to the api server input as well as your wifi credentials. If everything is good you should see a "Welcome to Terminus" screen. 
+
+## More info
+
+I will be using the opensource TRMNL software and will be self-hosting the server. If you are replicating my design but can't self-host there is a one time purchase of 43,95€ to use TRMNL servers. TRMNL software Github [Repo](https://github.com/usetrmnl/trmnl-firmware) and TRMNL website [Trmnl.com](https://trmnl.com/). TRMNl has a large [plugin environment](https://trmnl.com/integrations) and a user made [Recipes](https://trmnl.com/recipes). These plugins are the life blood of the device in my opinion and makes it possible to customize what is displayed according to what you need. For example if you are interested Formula 1 you can use the Formula 1 plugin to follow the races.
 
 ## Why it's a bit better ?
 
@@ -81,3 +108,9 @@ Case from the front without screen and PCB.
 ![Wiring diagram](./Media/ExcalidrawWiringDiagram.png "Simple wiring diagram")
 
 Simple Excalidraw Wiring diagram. I made this before the "real one" in Kicad.
+
+## Acknowledgements
+
+Thanks to Hack Club and the Fallout event for making this project possible. 
+Thanks to TRMNL for open sourcing their software and making custom devices and self hosting possible.
+Thanks to Terminus for their self-hosted server software.
