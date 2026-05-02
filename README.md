@@ -47,7 +47,7 @@ For the software I will start off with explaining the installation process and t
 
 Start off with plugging in the ESP-32 to you computer. You can then open the tool [available here](https://trmnl.com/flash). You can pick the "Seeed studio (XIAO 7.5" ePaper panel)" because it uses the same controller the ESP32-C3.
 
-![Flashing tool](./Media/WiringDiagramWithPictures.png "A screenshot from the flasing tool")
+![Flashing tool](./Media/FlashingTool.png "A screenshot from the flasing tool")
 
 To enter the ESP-32 into flashing mode you should plug it into your computer and hold down the BOOT button. This is the left button when looking at the board with the USB-c port pointing upwards. After this it should be visible in the USB JTAG/serial menu of your browser if you are using the web tool. After flashing the software to the ESP-32 you are down with the board and should move onto the configuring the server side. Incase you can't use the web tool for some reason you can find more detaikled instructions on [TRMNL's software GitHub page](https://github.com/usetrmnl/trmnl-firmware). This includes compaling the code yourself and having to combine .bin files and flashing them. This is mostly meant for developers and shouldn't be needed. 
 
