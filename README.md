@@ -118,6 +118,6 @@ Simple Excalidraw Wiring diagram. I made this before the "real one" in Kicad.
 
 ## Acknowledgements
 
-Thanks to Hack Club and the Fallout event for making this project possible. 
+Thanks to Hack Club and the Fallout event for making this project possible.
 Thanks to TRMNL for open sourcing their software and making custom devices and self hosting possible.
 Thanks to Terminus for their self-hosted server software.
