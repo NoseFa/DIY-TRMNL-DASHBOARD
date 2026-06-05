@@ -35,11 +35,11 @@ If you don't have an outlet / power source next to you mounting point you can us
 
 ## Why does this exist ?
 
-This was a personal project made to make my day to day life easier. Every morning when I wake up I first look at my school schedule then check the time and finally the public transit schedule. Of course because of early mornings I usually had to check atleast twice.
+This was a personal project made to make my day to day life easier. Every morning when I wake up I first look at my school schedule then check the time and finally the weather. Of course because of early mornings I usually had to check atleast twice.
 
-So I looked for solutions of displaying a calendar. I needed it to be digital because I didn't have energy to use a paper calendar. So I found the TRMNL which was close to a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own. My goal for this project was to make something actually useful for me. For this it needed to do atleast 3 things.
+So I looked for solutions of displaying the weather while also being able to do other stuff like displaying a calendar or schedule. So I found the TRMNL which was close to a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own. My goal for this project was to make something actually useful for me. For this it needed to do atleast 3 things.
 
-1. Show me my calendar and schedule without having to look at my phone.
+1. Show me important information like the weather without having to look at my phone.
 2. Wall mountable.
 3. Not need to be charged or managed alot after creation.
 
@@ -77,13 +77,13 @@ So for starters you should have something to host this on. I used docker compose
 
 Then I accessed the webui which was available at `http://HostedIp:2300`. Here I created a new user and password. Then I was able to access the web dashboard. It looks like this
 
-![Wiring diagram](./Media/TerminusDashboardPreview.png "The web dashboard for Terminus")
+![Terminus Dashboard](./Media/TerminusDashboardPreview.png "The web dashboard for Terminus")
 
-Here you can navigate interface to browse different extensions. Some of them can be directly installed and some need some extra configuration. I have included a customized verison of a calendar that I have modified to work on the self-hosted version. (All credit goes to the original creator and I just edited their code). You can use the devices section to add a new device.
+Here you can navigate interface to browse different extensions. Some of them can be directly installed and some need some extra configuration. I have included a customized version of [the daily weather plugin / recipe](https://trmnl.com/recipes/150460) that I have modified to work on the self-hosted version. You can find it in the [software folder](./Software/software.md) (All credit goes to the original creator [Daniel Sitnik](https://github.com/danielsitnik/) and I just edited their code to work with the self-hosted version). You can use the devices section to see statistics from your device.
 
 After flashing the software to the TRMNL itself. You can then connect it to power and see the screen of the TRMNL display you should connect to the wifi hotspot on your phone and use the sign in functionality on your phone to view the setup web portal (kind of like what you need to do on some public wifis to get online). You can navigate to the advanced software section and click custom server input the local address which should be `http://HostedIp:2300` to the api server input as well as your wifi credentials. If everything is good you should see a "Welcome to Terminus" screen.
 
-Even though the self-hosted setup will work I might still move onto the hosted solution just for the plugins. The extensions in Terminus do get close but still aren't perfect and need some work to get working. I hope they can get the one click importing and exporting working soon. So as a suggestion if you have the money I would buy access to the TRMNL hosted servers just for the ease of use and the ecosystem around the hosted environment. Still I have attached my current main screen on my TRMNL incase you do end up self-hosting and want a simple calendar.
+Even though the self-hosted setup will work I might still move onto the hosted solution just for the plugins / recipes. The extensions in Terminus do get close but still aren't perfect and need some work to get working. I hope they can get the one click importing and exporting working soon. So as a suggestion if you have the money I would buy access to the TRMNL hosted servers just for the ease of use and the ecosystem around the hosted environment. Still I have attached my current main screen on my TRMNL incase you do end up self-hosting and want to see what I modified to make a normal recipe/plugin work.
 
 ## More info
 
