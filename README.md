@@ -71,9 +71,8 @@ I haven't setup my device this way since I self-hosted and the setup flow can ch
 
 ### Self-Hosting
 
-NOTE!
-
-Self-hosting does require a lot more setup compared to buying access. Currently there are no ways of self-hosting that include the plugins made for the TRMNL hosted solution in a one click add way. Projects like Terminus are trying to make this better but they still aren't fully compatible and the plugin support is one of the major things still missing. I would suggest the hosted solution to everyone who isn't already experienced in home labbing and comfortable with self hosting services. If you want the easy one click installation of different screens and plugins Terminus is not there yet. Hopefully will be soon and that is the end goal for it.
+> [!NOTE]
+>Self-hosting does require a lot more setup compared to buying access. Currently there are no ways of self-hosting that include the plugins made for the TRMNL hosted solution in a one click add way. Projects like Terminus are trying to make this better but they still aren't fully compatible and the plugin support is one of the major things still missing. I would suggest the hosted solution to everyone who isn't already experienced in home labbing and comfortable with self hosting services. If you want the easy one click installation of different screens and plugins Terminus is not there yet. Hopefully will be soon and that is the end goal for it.
 
 For self-hosting I will explain what I did in order to get it working. There are multiple OSS ways you can implement a self-hosted version of a TRMNL server. I used [Terminus](https://github.com/usetrmnl/terminus) which is the most popular way of doing this and is the closest to the hosted solution in terms of features. The Terminus project is still in beta and not 100% equal to just buying TRMNL access. They do have extensions and they are working on making the importing plugins possible from the hosted version. It still isn't fully inline with the TRMNL hosted solution.
 
