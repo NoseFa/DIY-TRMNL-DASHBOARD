@@ -2,7 +2,7 @@
 
 ![Nordic TRMNL](./Media/TrmnlRender.png "3D render of the nordic TRMNL")
 
-A diy dashboard that is built with the TRMNL software in mind. Can display stuff like the your calendar, reminders or the public transit schedule. This repo is only for the hardware side. The TRMNL docs were a huge help in the design process and most of the electronics are based on their suggestions. This project was designed as a part of the HackClub hardware hackathon FALLOUT where people make hardware projects and get a chance to go to Shenzhen, China. More info available here [Fallout](https://fallout.hackclub.com)!
+A diy dashboard that is built with the TRMNL software in mind. Can display stuff like the your calendar, reminders or the public transit schedule. This repo is only for the hardware side. The TRMNL docs were a huge help in the design process and most of the electronics are based on their suggestions. This project was designed as a part of the Hack Club hardware hackathon FALLOUT where people make hardware projects and get a chance to go to Shenzhen, China. More info available here [Fallout](https://fallout.hackclub.com)!
 
 ## Parts
 
@@ -43,6 +43,8 @@ So I looked for solutions of displaying the weather while also being able to do 
 2. Wall mountable.
 3. Not need to be charged or managed alot after creation.
 
+This was also a project made for Hack Club [Fallout](https://fallout.hackclub.com)! So that was also a motivation behind this project.
+
 ## Software
 
 For the software I will start off with explaining the installation process and then move onto some extra info about it.
@@ -53,45 +55,43 @@ Start off with plugging in the ESP-32 to you computer. You can then open the too
 
 ![Flashing tool](./Media/FlashingTool.png "A screenshot from the flasing tool")
 
-To enter the ESP-32 into flashing mode you should plug it into your computer and hold down the BOOT button. This is the left button when looking at the board with the USB-c port pointing upwards. After this it should be visible in the USB JTAG/serial menu of your browser if you are using the web tool. After flashing the software to the ESP-32 you are down with the board and should move onto the configuring the server side. Incase you can't use the web tool for some reason you can find more detaikled instructions on [TRMNL's software GitHub page](https://github.com/usetrmnl/trmnl-firmware). This includes compaling the code yourself and having to combine .bin files and flashing them. This is mostly meant for developers and shouldn't be needed.
+To enter the ESP-32 into flashing mode you should plug it into your computer and hold down the BOOT button. This is the left button when looking at the board with the USB-c port pointing upwards. After this it should be visible in the USB JTAG/serial menu of your browser if you are using the web tool. After flashing the software to the ESP-32 you are done with the board and should move onto the configuring the server side. Incase you can't use the web tool for some reason you can find more detailed instructions on [TRMNL's software GitHub page](https://github.com/usetrmnl/trmnl-firmware). This includes compiling the code yourself and having to combine .bin files and flashing them. This is mostly meant for developers and you shouldn't need it if you use the web tool. The .bin files are also available on the terminus dashboard if you are self-hosting.
 
-The next steps you need to do is setting up the server and syncing it to the display. If you plan on self-hosting (this means running a docker container with the TRMNL server on your own hardware like a RPI or a home server etc.). This option is a little bit more advanced compared to using TRMNL's servers and I would suggest that if you can afford it buying the licence is most likely worth it.
+The next steps you need to do is setting up the server and syncing it to the display. If you plan on self-hosting (this means running a docker container with the TRMNL server on your own hardware like a RPI or a home server etc.). This option is a little bit more advanced compared to using TRMNL's servers and I would suggest that if you can afford it buying the licence to use TRMNLs servers. It will most likely worth it just to skip the hassle with plugins etc. More about the differences in the next section.
 
 #### Buying access
 
-For buying access you can navigate to [the TRMNL site store](https://shop.trmnl.com/products/byod). Here you can buy access / a license to use TRMNL servers for your display. The server is responsible for compiling all the data from different sources and then sending a page that the device can render to your display. This is the easier option and after flashing the firmware on your ESP-32 you should just be able to navigate to [The Claim your device page](https://trmnl.com/claim-a-device). Here you should input the data needed this includes account information and information about your BYOD license order. After claiming the device by connecting to the wifi hotspot of the TRMNL then using the login functionlaity to input your wifi information for the TRMNL to connect. Then the display should display a friendly id and you can input that to your dashboard and it should start working. You can start setting up what you want to see on your TRMNL.
+For buying access you can navigate to [the TRMNL site store](https://shop.trmnl.com/products/byod). Here you can buy access / a license to use TRMNL servers for your display. The server is responsible for compiling all the data from different sources and then sending a photo that the device can render to your display. This is the easier option and after flashing the firmware on your ESP-32 you should just be able to navigate to [The Claim your device page](https://trmnl.com/claim-a-device). Here you should input the data needed this includes account information and information about your BYOD license order. After claiming the device by connecting to the wifi hotspot of the TRMNL then using the login functionlaity to input your wifi information for the TRMNL to connect. Then the display should display a friendly id and you can input that to your dashboard and it should start working. After this you can start setting up what you want to see on your TRMNL in a playlist. You can for example use [this recipe](https://trmnl.com/recipes/150460) by [Daniel Sitnik](https://github.com/danielsitnik/) to display the weather.
 
-I haven't setup my device this way yet and the setup flow can change so for the most up to date information you can check [the TRMNL site](https://docs.trmnl.com/go/diy/byod). Some of the setup flow was behind authentication and you need a licence for it so this guide might be missing a couple steps.
+I haven't setup my device this way since I self-hosted and the setup flow can change so for the most up to date information you can check [the TRMNL site](https://docs.trmnl.com/go/diy/byod). Some of the setup flow was behind authentication and you need a licence for it so this guide might be missing a couple steps but the main points are outlined here.
 
 #### Self-Hosting
 
 NOTE!
 
-Self-hosting does require a lot more setup compared to buying access. Currently there are no ways of self-hosting that include the plugins made for the TRMNL hosted solution. Projects like Terminus are trying to make this better but they still aren't fully compatible and the plugin support is one of the major things still missing. I would suggest the hosted solution to everyone who isn't already experienced in home labbing and comfortable with self hosting services.
+Self-hosting does require a lot more setup compared to buying access. Currently there are no ways of self-hosting that include the plugins made for the TRMNL hosted solution in a one click add way. Projects like Terminus are trying to make this better but they still aren't fully compatible and the plugin support is one of the major things still missing. I would suggest the hosted solution to everyone who isn't already experienced in home labbing and comfortable with self hosting services. If you want the easy one click installation of different screens and plugins Terminus is not there yet. Hopefully will be soon and that is the end goal for it.
 
 For self-hosting I will explain what I did in order to get it working. There are multiple OSS ways you can implement a self-hosted version of a TRMNL server. I used [Terminus](https://github.com/usetrmnl/terminus) which is the most popular way of doing this and is the closest to the hosted solution in terms of features. The Terminus project is still in beta and not 100% equal to just buying TRMNL access. They do have extensions and they are working on making the importing plugins possible from the hosted version. It still isn't fully inline with the TRMNL hosted solution.
 
-For me since I already have a home server I chose this route to save some money and maybe learn a thing or two. There are already existing guides by on [the Terminus GitHub page](https://github.com/usetrmnl/terminus) and [in the TRMNL Help forum by Mario](https://help.trmnl.com/en/articles/12263392-connect-your-device-to-terminus-byos). Mario's guide covers how to sync your device to a server and the GitHub guide covers setting up the server itself. I have tried to summarise the main points here but these can help you if you want to know more about this etc.
+For me since I already have a home server I chose this route to save some money and maybe learn a thing or two. There are already existing guides by on [the Terminus GitHub page](https://github.com/usetrmnl/terminus) and [in the TRMNL Help forum by Mario](https://help.trmnl.com/en/articles/12263392-connect-your-device-to-terminus-byos). Mario's guide covers how to sync your device to a server and the GitHub guide covers setting up the server itself. I have tried to summarize what I did and the main points here but these can help you if you want to know more about this or are running a different setup etc.
 
-So for starters you should have something to host this on. I used docker compose on my unraid server. I first installed the compose manager plus plugin from the unraid community app store. Then i just inputted the docker compose file available in [the terminus repo](https://github.com/usetrmnl/terminus/blob/main/compose.yml). A .env file should be created automatically. You can view the [Terminus github page configuration section](https://github.com/usetrmnl/terminus/blob/main/doc/configuration.adoc). It has great information on what the .env file includes and what each variable means.
+So for starters you should have something to host this on. I used docker compose on my unraid server. I first installed the compose manager plus plugin from the unraid community app store. Then I just inputted the docker compose file available in [the terminus repo](https://github.com/usetrmnl/terminus/blob/main/compose.yml). A .env file should be created automatically. You can view the [Terminus github page configuration section](https://github.com/usetrmnl/terminus/blob/main/doc/configuration.adoc). It has great information on what the .env file includes and what each variable means and does.
 
 Then I accessed the webui which was available at `http://HostedIp:2300`. Here I created a new user and password. Then I was able to access the web dashboard. It looks like this
 
 ![Terminus Dashboard](./Media/TerminusDashboardPreview.png "The web dashboard for Terminus")
 
-Here you can navigate interface to browse different extensions. Some of them can be directly installed and some need some extra configuration. I have included a customized version of [the daily weather plugin / recipe](https://trmnl.com/recipes/150460) that I have modified to work on the self-hosted version. You can find it in the [software folder](./Software/software.md) (All credit goes to the original creator [Daniel Sitnik](https://github.com/danielsitnik/) and I just edited their code to work with the self-hosted version). You can use the devices section to see statistics from your device.
+Here you can navigate interface to browse different extensions. Some of them can be directly installed and some need some extra configuration. For community made extensions you can open the extensions menu and click Gallery. You can use the devices section to see statistics from your device and for example the offical TRMNL devices report battery status here. In the devices section you can also configure other stuff about the device like update frequency, sleep states and what playlist is currently visible.
 
-After flashing the software to the TRMNL itself. You can then connect it to power and see the screen of the TRMNL display you should connect to the wifi hotspot on your phone and use the sign in functionality on your phone to view the setup web portal (kind of like what you need to do on some public wifis to get online). You can navigate to the advanced software section and click custom server input the local address which should be `http://HostedIp:2300` to the api server input as well as your wifi credentials. If everything is good you should see a "Welcome to Terminus" screen.
+I have included a customized version of [the daily weather plugin / recipe](https://trmnl.com/recipes/150460) that I have modified to work on the self-hosted version. You can find it in the [software folder](./Software/software.md) (All credit goes to the original creator [Daniel Sitnik](https://github.com/danielsitnik/) and I just edited their code to work with the self-hosted version). I have also included some info about what I changed to get it to work in the [Software.md file](./Software/software.md) as well as installation instructions.
 
-Even though the self-hosted setup will work I might still move onto the hosted solution just for the plugins / recipes. The extensions in Terminus do get close but still aren't perfect and need some work to get working. I hope they can get the one click importing and exporting working soon. So as a suggestion if you have the money I would buy access to the TRMNL hosted servers just for the ease of use and the ecosystem around the hosted environment. Still I have attached my current main screen on my TRMNL incase you do end up self-hosting and want to see what I modified to make a normal recipe/plugin work.
+After flashing the software to the TRMNL itself. You can then connect it to power and see the screen of the TRMNL display you should connect to the wifi hotspot on your phone and use the sign in functionality on your phone to view the setup web portal (kind of like what you need to do on some public wifis to get online). You can navigate to the advanced software section and click custom server. You should input the local address which should be `http://HostedIp:2300` to the api server input as well as your wifi credentials. If everything is good you should see a "Welcome to Terminus" screen rendered.
 
-## More info
-
-I will be using the opensource TRMNL software and will be self-hosting the server. If you are replicating my design but can't self-host there is a one time purchase of 43,95€ to use TRMNL servers. TRMNL software Github [Repo](https://github.com/usetrmnl/trmnl-firmware) and TRMNL website [Trmnl.com](https://trmnl.com/). TRMNl has a large [plugin environment](https://trmnl.com/integrations) and a user made [Recipes](https://trmnl.com/recipes). These plugins are the life blood of the device in my opinion and makes it possible to customize what is displayed according to what you need. For example if you are interested Formula 1 you can use the Formula 1 plugin to follow the races. For self-hosting on terminus these are replaced by extensions which try to do most of the things plugins can.
+Even though the self-hosted setup will work I might still move onto the hosted solution just for the plugins / recipes. The extensions in Terminus do get close but still aren't perfect and need some work to get working. I hope they can get the one click importing and exporting working soon. So as a suggestion if you have the money I would buy access to the TRMNL hosted servers just for the ease of use and the ecosystem around the hosted environment. Still I have attached [the daily weather plugin / recipe by Daniel Sitnik](./Software/extension-daily_weather.zip) incase you do end up self-hosting and want to see what I modified to make a normal recipe/plugin work.
 
 ## Why it's a bit better ?
 
-So the my diy Nordic TRMNL is made to be wall mountable. This makes it easier to blend in to the environment. Also buying the components directly and self hosting the server makes the whole package a little bit cheaper. I am still thankful that TRMNL decided to open source the software and make the product diyable and self-hostable. So there are somethings that I think my TRMNL is better for.
+So my diy Nordic TRMNL is made to be wall mountable. This makes it easier to blend in to the environment. Also buying the components directly and self hosting the server makes the whole package a little bit cheaper. I am still thankful that TRMNL decided to open source the software and make the product diyable and self-hostable. So there are somethings that I think my TRMNL does better. This was also a good learning experience in self-hosting.
 
 ## Wiring
 
@@ -112,11 +112,11 @@ Here is another wiring diagram with pictures that shows how they attach together
 I used excalidraw during my design process. The mind map screenshot attached has most of my design notes. The mind map is available as an [excalidraw file](./Excalidraw/Notes.excalidraw) for a better viewing experience.,
 ![Excalidraw](./Media/TrmnlExcalidraw.png "Excalidraw").
 
-Bill of Materials available here: [BOM](./BOM.csv)
+Bill of Materials available here: [BOM](./BOM.csv). (BOM doesn't include the cost of 3D printing since I did it with my own 3d printer. Also the price of double sided tape isn't included since I already had it around.)
 
 ## Pictures
 
-Here are some more pictures of the project.
+Here are some more renders of the project.
 
 ![Case with PCB](./Media/CaseWithScreen.png "Case with PCB")
 Case from behind with screen and PCB.
@@ -130,6 +130,7 @@ Simple Excalidraw Wiring diagram. I made this before the "real one" in Kicad.
 
 ## Acknowledgements
 
-Thanks to Hack Club and the Fallout event for making this project possible.
+Thanks to Hack Club and the Fallout event for making this project possible. If you want to view the project I made for Fallout including journals you can view it [on the event page](https://fallout.hackclub.com/projects/828).
 Thanks to TRMNL for open sourcing their software and making custom devices and self hosting possible.
 Thanks to Terminus for their self-hosted server software.
+Thanks to [Daniel Sitnik](https://github.com/danielsitnik/) for making the Daily Weather recipe I modified.
