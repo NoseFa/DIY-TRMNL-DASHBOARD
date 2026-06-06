@@ -15,15 +15,17 @@ A diy dashboard that is built with the TRMNL software in mind. Can display stuff
 
 ## Build guide
 
-If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case folder](./3Dfiles/CaseOnly) has ready to print files that have the case parts. Use these if you are just printing the case. The case is designed to be printed in two halves which then are screwed together for the final build. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB, ESP-32 and the display. You might want to use this if you want to edit the files. You might also want to adjust some tolerances if your printer has issues with these or you are using different inserts for example. My printer is a pretty budget FDM printer and it didn't have any issues. The two pieces most likely might not fit on the printer at the same time so you might need to print them seperately. I have also included 3D printer files for the logo pieces. If you want to print these seperately. This is what I did because I dont have a multi color printer (This is just if you want the front logo highlighted).
+If you are using the same components the Cad files are here [3D files](./3Dfiles/CaseFiles/). [Case folder](./3Dfiles/CaseFiles/) has ready to print files that have the case parts. Use these if you are just printing the case. The case is designed to be printed in two halves which then are screwed together for the final build. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB, ESP-32 and the display. You might want to use this if you want to edit the files. You might also want to adjust some tolerances if your printer has issues with these or you are using different inserts for example. My printer is a pretty budget FDM printer and it didn't have any issues. The two pieces most likely might not fit on the printer at the same time so you might need to print them seperately. I have also included 3D printer files for the [logo pieces](./3Dfiles/CaseFiles/FrontLogo/). If you want to print these seperately. This is what I did because I dont have a multi color printer (This is just if you want the front logo highlighted).
 
-After getting the parts printed you can attach the ESP32 to the driver board using the header pins. The display should be installed in the display holder first. You should then install 4 heated inserts in each of the corners of the display holder.
+You should start off by printing the [Display holder](./3Dfiles/CaseFiles/DisplayHolder/) and the [Main frame](./3Dfiles/CaseFiles/MainFrame/). These parts are required. The display holder can be printed without supports but the main frame will most likely require them in some areas depending on the orientation you print in. Then you might want to print the logo as well [Logo](./3Dfiles/CaseFiles/FrontLogo/).
 
-You can then take the second body part (the one with the pcb holder) and install the heated inserts for the driver board pcb (there are 4 holes). You can then screw in the pcb with the 2.5mmx5mm screws. If you want to you can add some small pieces of double sided tape to the highlighted corners in the screenshot below. This can make the display fit better but isn't required for the build to work.
+After getting the parts printed you can attach the ESP32 to the driver board using the header pins. The display should be installed in the display holder first. You should then install 4 heated inserts in each of the corners of the display holder. The print should have ready made holes for them.
+
+You can then take the main frame and install the heated inserts for the driver board pcb (there are 4 holes). You can then screw in the pcb with the 2.5mm x 5mm screws. If you want to you can add some small pieces of double sided tape to the highlighted corners in the screenshot below. This can make the display fit better but isn't required for the build to work.
 
 ![Highlighted positions for the double sided tape](./Media/BuildGuideHighlightedTapePositions.png)
 
-After this you can attach the body parts together using the same 2.5mmx5mm screws (you might need a screwdriver with a narrow end to fit) remembering to route the display cable through the slot for it below the pcb holder.
+After this you can attach the body parts together using the same 2.5mmx5mm screws (you might need a screwdriver with a narrow end to fit) remembering to route the display cable through the slot for it below the pcb holder. If you printed the logo you can attach it using super glue or just press fitting them together.
 
 Now the physical build is done and you can move onto software. You should check the software section for more detailed software instructions. As a TL;DR You can pretty much just use [this tool](https://trmnl.com/flash) to flash the firmware. You should still check the software section for detailed instructions.
 
@@ -133,6 +135,9 @@ Simple Excalidraw Wiring diagram. I made this before the "real one" in Kicad.
 ## Acknowledgements
 
 Thanks to Hack Club and the Fallout event for making this project possible. If you want to view the project I made for Fallout including journals you can view it [on the event page](https://fallout.hackclub.com/projects/828).
+
 Thanks to TRMNL for open sourcing their software and making custom devices and self hosting possible.
+
 Thanks to Terminus for their self-hosted server software.
+
 Thanks to [Daniel Sitnik](https://github.com/danielsitnik/) for making the Daily Weather recipe I modified.
