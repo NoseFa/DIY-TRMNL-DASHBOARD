@@ -15,15 +15,17 @@ A diy dashboard that is built with the TRMNL software in mind. Can display stuff
 
 ## Build guide
 
-If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case folder](./3Dfiles/CaseOnly) has ready to print files that have the case parts. Use these if you are just printing the case. The case is designed to be printed in two parts which then are screwed together for the final build. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB, ESP-32 and the display. You might want to use this if you want to edit the files. You might also want to adjust some tolerances if your printer has issues with these or you are using different inserts for example. My printer is a pretty budget FDM printer and it didn't have any issues. The two pieces most likely might not fit on the printer at the same time so you might need to print them seperately.
+If you are using the same components you can print the case available here [3D files](./3Dfiles). [Case folder](./3Dfiles/CaseOnly) has ready to print files that have the case parts. Use these if you are just printing the case. The case is designed to be printed in two halves which then are screwed together for the final build. The [full project folder](./3Dfiles/FullProject) has the whole Fusion project including the driver board PCB, ESP-32 and the display. You might want to use this if you want to edit the files. You might also want to adjust some tolerances if your printer has issues with these or you are using different inserts for example. My printer is a pretty budget FDM printer and it didn't have any issues. The two pieces most likely might not fit on the printer at the same time so you might need to print them seperately. I have also included 3D printer files for the logo pieces. If you want to print these seperately. This is what I did because I dont have a multi color printer (This is just if you want the front logo highlighted).
 
-After getting the parts printed you can attach the ESP32 to the driver board using the pins and then connect the display to the driver board. The display should be installed in the display holder / first body part first. You should then install 4 heated inserts in each of the corners.
+After getting the parts printed you can attach the ESP32 to the driver board using the header pins. The display should be installed in the display holder first. You should then install 4 heated inserts in each of the corners of the display holder.
 
-You can then take the second body part (the one with the pcb holder) and install the heated inserts for the driver board pcb (there are 4 holes). You can then screw in the pcb with the 2.5mmx5mm screws and attach the body parts together using the same screws remembering to route the display cable through the hole below the pcb holder.
+You can then take the second body part (the one with the pcb holder) and install the heated inserts for the driver board pcb (there are 4 holes). You can then screw in the pcb with the 2.5mmx5mm screws. If you want to you can add some small pieces of double sided tape to the highlighted corners in the screenshot below. This can make the display fit better but isn't required for the build to work.
 
-Finally flash the software through a computer and plug in usb-c power. Then just walkthrough the device setup based on if you are using TRMNL servers or self-hosting.
+![Highlighted positions for the double sided tape](./Media/BuildGuideHighlightedTapePositions.png)
 
-You should check the software section for more detailed software instructions. As a TL;DR You can pretty much just use [this tool](https://trmnl.com/flash) to flash the firmware. You should still check the software section for detailed instructions.
+After this you can attach the body parts together using the same 2.5mmx5mm screws (you might need a screwdriver with a narrow end to fit) remembering to route the display cable through the slot for it below the pcb holder.
+
+Now the physical build is done and you can move onto software. You should check the software section for more detailed software instructions. As a TL;DR You can pretty much just use [this tool](https://trmnl.com/flash) to flash the firmware. You should still check the software section for detailed instructions.
 
 If self-hosting follow the guide in the software section or the offical TRMNL guide available in the TRMNL dev [docs](https://docs.trmnl.com/go/diy/byod-s).
 
