@@ -63,13 +63,13 @@ To enter the ESP-32 into flashing mode you should plug it into your computer and
 
 The next steps you need to do is setting up the server and syncing it to the display. If you plan on self-hosting (this means running a docker container with the TRMNL server on your own hardware like a RPI or a home server etc.). This option is a little bit more advanced compared to using TRMNL's servers and I would suggest that if you can afford it buying the licence to use TRMNLs servers. It will most likely worth it just to skip the hassle with plugins etc. More about the differences in the next section.
 
-#### Buying access
+### Buying access
 
 For buying access you can navigate to [the TRMNL site store](https://shop.trmnl.com/products/byod). Here you can buy access / a license to use TRMNL servers for your display. The server is responsible for compiling all the data from different sources and then sending a photo that the device can render to your display. This is the easier option and after flashing the firmware on your ESP-32 you should just be able to navigate to [The Claim your device page](https://trmnl.com/claim-a-device). Here you should input the data needed this includes account information and information about your BYOD license order. After claiming the device by connecting to the wifi hotspot of the TRMNL then using the login functionlaity to input your wifi information for the TRMNL to connect. Then the display should display a friendly id and you can input that to your dashboard and it should start working. After this you can start setting up what you want to see on your TRMNL in a playlist. You can for example use [this recipe](https://trmnl.com/recipes/150460) by [Daniel Sitnik](https://github.com/danielsitnik/) to display the weather.
 
 I haven't setup my device this way since I self-hosted and the setup flow can change so for the most up to date information you can check [the TRMNL site](https://docs.trmnl.com/go/diy/byod). Some of the setup flow was behind authentication and you need a licence for it so this guide might be missing a couple steps but the main points are outlined here.
 
-#### Self-Hosting
+### Self-Hosting
 
 NOTE!
 
