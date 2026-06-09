@@ -41,7 +41,7 @@ If you don't have an outlet / power source next to you mounting point you can us
 
 This was a personal project made to make my day to day life easier. Every morning when I wake up I first look at my school schedule then check the time and finally the weather. Of course because of early mornings I usually had to check atleast twice.
 
-So I looked for solutions of displaying the weather while also being able to do other stuff like displaying a calendar or schedule. So I found the TRMNL which was close to a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and didn't come with a wall mount. So I decided to make my own. My goal for this project was to make something actually useful for me. For this it needed to do atleast 3 things.
+So I looked for solutions of displaying the weather while also being able to do other stuff like displaying a calendar or schedule. So I found the TRMNL which was close to a perfect solution for my problem. Unfortunately the official TRMNL OG was a bit too expensive and had some features I didn't need like a battery. So I decided to make my own. My goal for this project was to make something actually useful for me. For this it needed to do atleast 3 things.
 
 1. Show me important information like the weather without having to look at my phone.
 2. Wall mountable.
@@ -94,7 +94,7 @@ Even though the self-hosted setup will work I might still move onto the hosted s
 
 ## Why it's a bit better ?
 
-So my diy Nordic TRMNL is made to be wall mountable. This makes it easier to blend in to the environment. Also buying the components directly and self hosting the server makes the whole package a little bit cheaper. I am still thankful that TRMNL decided to open source the software and make the product diyable and self-hostable. So there are somethings that I think my TRMNL does better. This was also a good learning experience in self-hosting.
+So my diy Nordic TRMNL is made to be wall mountable first. This makes it easy to blend in to the environment. Also buying the components directly and self hosting the server makes the whole package a little bit cheaper. I am still thankful that TRMNL decided to open source the software and make the product diyable and self-hostable. So there are somethings that I think my TRMNL does better. This was also a good learning experience in self-hosting.
 
 ## Wiring
 
