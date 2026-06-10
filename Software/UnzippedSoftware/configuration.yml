@@ -1,0 +1,65 @@
+---
+version: 0.61.0
+name: daily_weather
+label: Daily Weather
+description: Imported from TRMNL.
+mode: text
+kind: poll
+tags: []
+static_body:
+fields:
+- name: About This Plugin
+  keyname: bio
+  category: life,personal
+  field_type: author_bio
+  github_url: http://github.com/danielsitnik/
+  description: "Get a clear snapshot of today’s weather plus a 5-day forecast, including
+    temperatures, uv indexes and rain chances.<br/><br/>This plugin was created by
+    Daniel Sitnik, Principal Architect @ Accenture Brazil and creator of small things.
+    Want a custom TRMNL Plugin for you? Check my <a href=\"https://ko-fi.com/danielsitnik/shop\"
+    target=\"_blank\">ko-fi page</a> or e-mail me! \U0001F600"
+  email_address: danielsitnik@outlook.com
+  learn_more_url: https://ko-fi.com/danielsitnik/shop
+- name: Latitude
+  keyname: latitude
+  help_text: Go to <a href="https://www.latlong.net" target="_blank">https://www.latlong.net</a>,
+    search for the desired place or navigate using the map, then copy the latitude.
+  field_type: string
+  description: The latitude of your location
+  placeholder: Latitude
+- name: Longitude
+  keyname: longitude
+  help_text: Go to <a href="https://www.latlong.net" target="_blank">https://www.latlong.net</a>,
+    search for the desired place or navigate using the map, then copy the longitude.
+  field_type: string
+  description: The longitude of your location
+  placeholder: Longitude
+- name: Temperature Unit
+  default: fahrenheit
+  keyname: temp_unit
+  options:
+  - Celsius: celsius
+  - Fahrenheit: fahrenheit
+  field_type: select
+  description: Select the desired temperature unit
+- name: Location Name
+  keyname: location_name
+  optional: true
+  help_text: This name will be displayed at the right side of the plugin title bar.
+  field_type: string
+  description: 'Give a name to help identify this location (eg: home, office, city
+    name, etc.)'
+  placeholder: Location name
+data:
+  values:
+    temp_unit: fahrenheit
+interval: 1
+unit: none
+days: []
+last_day_of_month: false
+start_at: '2026-06-05T00:00:00+00:00'
+exchanges:
+- headers:
+  verb: get
+  body:
+  template: https://api.open-meteo.com/v1/forecast?latitude=61.561200&longitude=25.176400&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max,precipitation_probability_max,precipitation_probability_min,precipitation_probability_mean&current=temperature_2m,relative_humidity_2m,weather_code,precipitation,is_day&timezone=auto&temperature_unit=celsius

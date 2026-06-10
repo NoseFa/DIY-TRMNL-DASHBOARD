@@ -1,0 +1,205 @@
+<style>
+  .screen--lg .view--full .weather-image {
+    width: 280px;
+  }
+  
+  .view--full .weather-image {
+    width: 180px;
+  }
+
+  .screen--lg .view--half_vertical .weather-image {
+    width: 260px;
+  }
+
+  .view--half_vertical .weather-image {
+    width: 160px;
+  }
+
+  .screen--lg .weather-icon {
+    width: 60px;
+  }
+  
+  .weather-icon {
+    width: 50px;
+  }
+
+  .screen--lg .weather-icon-mini {
+    width: 34px;
+  }
+
+  .weather-icon-mini {
+    width: 24px;
+  }
+
+  .screen--lg .weather-icon-forecast {
+    width: 100px;
+  }
+
+  .weather-icon-forecast {
+    width: 50px;
+  }
+</style>
+
+{%liquid
+  assign is_day = source_1.current.is_day
+  assign image_day = ""
+  
+  for i in (0..5)
+    if i == 0
+      assign code = source_1.current.weather_code
+    else
+      assign code = source_1.daily.weather_code[i]
+    endif
+
+    if code == 0 or code == 1
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-sunny.svg,"
+        assign condition = condition | append: "Sunny,"
+      else
+        assign image_day = image_day | append: "wi-night-clear.svg,"
+        assign condition = condition | append: "Clear,"
+      endif
+    elsif code == 2 or code == 3
+      assign condition = condition | append: "Cloudy,"
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-cloudy.svg,"
+      else
+        assign image_day = image_day | append: "wi-night-cloudy.svg,"
+      endif
+    elsif code == 45 or code == 48
+      assign condition = condition | append: "Fog,"
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-fog.svg,"
+      else
+        assign image_day = image_day | append: "wi-night-fog.svg,"
+      endif
+    elsif code >= 51 and code <= 67
+      assign condition = condition | append: "Rain,"
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-rain.svg,"
+      else
+        assign image_day = image_day | append: "wi-night-rain.svg,"
+      endif
+    elsif code >= 71 and code <= 77
+      assign condition = condition | append: "Snow,"
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-snow.svg,"
+      else
+        assign image_day = image_day | append: "wi-night-snow.svg,"
+      endif
+    elsif code >= 80 and code <= 82
+      assign condition = condition | append: "Rain,"
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-rain.svg,"
+      else
+        assign image_day = image_day | append: "wi-night-rain.svg,"
+      endif
+    elsif code >= 85 and code <= 86
+      assign condition = condition | append: "Snow,"
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-snow.svg,"
+      else
+        assign image_day = image_day | append: "wi-night-snow.svg,"
+      endif
+    else
+      assign condition = condition | append: "Storm,"
+      if is_day == 1
+        assign image_day = image_day | append: "wi-day-thunderstorm.svg,"
+      else
+        assign image_day = image_day | append: "wi-night-thunderstorm.svg,"
+      endif
+    endif
+  endfor
+
+  assign image_day = image_day | split: ","
+  assign condition = condition | split: ","
+%}
+
+<div class="{{ extension.css_classes }}">
+  <div class="view view--full">
+    <div class="layout layout--col gap--medium">
+  <div class="grid">
+    <div class="row row--center col--span-3 col--end">
+      <img class="weather-image" src="https://usetrmnl.com/images/plugins/weather/{{ image_day[0] }}">
+    </div>
+    <div class="col col--span-3 col--end">
+      <div class="item h--full">
+        <div class="meta"></div>
+        <div class="content">
+          <span class="value value--xxxlarge lg:value--mega" data-fit-value="true">{{ source_1.current.temperature_2m | round }}°</span>
+          <span class="label lg:label--large">Temperature ({{ source_1.current.time | date: "%l:%M %p" | lstrip }})</span>
+        </div>
+      </div>
+    </div>
+    <div class="col col--span-3 col--end gap--medium">
+      <div class="item">
+        <div class="meta"></div>
+        <div class="icon">
+          <img class="weather-icon" src="https://usetrmnl.com/images/plugins/weather/wi-thermometer.svg">
+        </div>
+        <div class="content">
+          <span class="value value--small lg:value--base">{{ source_1.daily.temperature_2m_min[0] | round }}° / {{ source_1.daily.temperature_2m_max[0] | round }}°</span>
+          <span class="label lg:label--large">Low / High</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="meta"></div>
+        <div class="icon">
+          <img class="weather-icon" src="https://usetrmnl.com/images/plugins/weather/wi-raindrops.svg">
+        </div>
+        <div class="content">
+          <span class="value value--small lg:value--base">{{ source_1.current.relative_humidity_2m }}%</span>
+          <span class="label lg:label--large">Humidity</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="meta"></div>
+        <div class="icon">
+          <img class="weather-icon" src="https://usetrmnl.com/images/plugins/weather/wi-hot.svg">
+        </div>
+        <div class="content">
+          <span class="value value--small lg:value--base">{{ source_1.daily.uv_index_max[0] | round }}</span>
+          <span class="label lg:label--large">UV Index</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="divider"></div> -->
+  <!-- forecast -->
+  <div class="grid grid--cols-5 h--full">
+    {% for i in (1..5) %}
+    <div class="col col--start gap--medium lg:gap--distribute text--center bg--gray-75 rounded--small p--2">
+      {% if forloop.index == 1 %}
+      <span class="title text-stroke lg:title--large">Tomorrow</span>
+      {% else %}
+      <span class="title text-stroke lg:title--large">{{ source_1.daily.time[i] | date: "%A" }}</span>
+      {% endif %}
+      <div class="w--full">
+        <img class="weather-icon-forecast image-stroke" src="https://usetrmnl.com/images/plugins/weather/{{ image_day[i] }}">
+        <br/>
+        <span class="description text-stroke visible lg:hidden">{{ source_1.condition[i] }}</span>
+        <span class="label label--large text-stroke hidden lg:visible">{{ source_1.condition[i] }}</span>
+      </div>
+      <div class="w--full">
+        <span class="value value--xsmall lg:value--base text-stroke">{{ source_1.daily.temperature_2m_min[i] | round }}° / {{ source_1.daily.temperature_2m_max[i] | round }}°</span>
+      </div>
+      <div class="w--full">
+        <div class="flex flex--row gap--xsmall">
+          <img class="weather-icon-mini image-stroke" src="https://usetrmnl.com/images/plugins/weather/wi-hot.svg">
+          <span class="value value--xxsmall lg:value--small text-stroke mr--1">{{ source_1.daily.uv_index_max[i] | round }}</span>
+          <img class="weather-icon-mini image-stroke" src="https://usetrmnl.com/images/plugins/weather/wi-rain.svg" />
+          <span class="value value--xxsmall lg:value--small text-stroke">{{ source_1.daily.precipitation_probability_max[i] }}%</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="flex flex--row flex--right description mr--1">Data courtesy of Open-Meteo.com</div>
+<div class="title_bar">
+  <img class="image" src="https://usetrmnl.com/images/plugins/weather--render.svg">
+  <h1 class="title">Daily Weather</h1>
+  <span class="instance">Home</span>
+</div>
+  </div>
+</div>
